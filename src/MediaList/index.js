@@ -8,7 +8,7 @@ class MediaList extends Component {
   }
 
   loadMore(){
-    this.setPageSize(this.state.pageSize += 20);
+    this.setPageSize(this.state.pageSize + 20);
   }
 
   setPageSize(size){
