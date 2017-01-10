@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBox from './SearchBox';
 import MediaList from './MediaList';
 import logo from './logo.svg';
+import * as config from './config.js';
 import './App.css';
 
 class App extends Component {
@@ -62,7 +63,7 @@ class App extends Component {
 
     if (this.state.component === 'search'){
       component = <div>
-        <SearchBox onResponse={this.onPenderResponse.bind(this)} token="your-api-token-here"/>
+        <SearchBox onResponse={this.onPenderResponse.bind(this)} token={config.apiKey}/>
         <p><a href="#!" onClick={this.showMediaList.bind(this)}>See cached metadata entries</a></p>
       </div>
     } else {
