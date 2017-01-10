@@ -17,14 +17,27 @@ class App extends Component {
 
   onPenderResponse(mediaURL, data){
     let newItem = {};
-
     newItem.mediaURL = mediaURL;
     newItem.response = data;
+    this.updateCache(newItem);
+  }
 
+  updateCache(newItem){
     let history = this.state.history;
+
+    let index = history.findIndex((it) => {
+      return (it.mediaURL === newItem.mediaURL);
+    });
+
+    if (index >= 0){
+      history.splice(index, 1);
+    }
+
     history.unshift(newItem);
+
     this.storeOnLocalStorage(history);
-    this.setState({history: history, component: 'mediaList'});
+    this.setState({history: history});
+    this.showMediaList();
   }
 
   storeOnLocalStorage(history){
