@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MediaItem from '../MediaItem';
+import config from '../config.js';
 
 class MediaList extends Component {
   constructor(){
@@ -8,7 +9,7 @@ class MediaList extends Component {
   }
 
   loadMore(){
-    this.setPageSize(this.state.pageSize + 20);
+    this.setPageSize(this.state.pageSize + config.pageSize);
   }
 
   setPageSize(size){
@@ -18,7 +19,7 @@ class MediaList extends Component {
   }
 
   componentDidMount(){
-    this.setPageSize(20);
+    this.setPageSize(config.pageSize);
   }
 
   render() {

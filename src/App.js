@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SearchBox from './SearchBox';
 import MediaList from './MediaList';
 import logo from './logo.svg';
-import * as config from './config.js';
+import config from './config.js';
 import './App.css';
 
 class App extends Component {
