@@ -12,14 +12,9 @@ class MediaList extends Component {
   }
 
   setPageSize(size){
-    let newState = this.state;
-    newState.pageSize = size;
-
-    if (newState.pageSize >= this.props.history.length){
-      newState.pageSize = this.props.history.length;
-    }
-
-    this.setState(newState);
+    this.setState({
+      pageSize: Math.min(size, this.props.history.length)
+    });
   }
 
   componentDidMount(){
