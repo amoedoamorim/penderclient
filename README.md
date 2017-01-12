@@ -11,7 +11,8 @@ To download from github and run locally please do as follows:
 
 - git clone https://github.com/amoedoamorim/penderclient.git
 - cd penderclient
-- edit App.js and replace **your-api-token-here** with your API Token
+- create your config.js file by copying config.sample.js
+- edit config.js and replace **your-api-token-here** with your API Token
 - npm install
 - npm start
 
