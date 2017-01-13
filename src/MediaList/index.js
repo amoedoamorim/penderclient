@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MediaItem from '../MediaItem';
 import config from '../config.js';
+import './MediaList.css';
 
 class MediaList extends Component {
   constructor(){
@@ -22,6 +23,10 @@ class MediaList extends Component {
     this.setPageSize(config.pageSize);
   }
 
+  loadMoreVisibilityClass(){
+    return this.state.pageSize >= this.props.history.length ? 'invisible' : '';
+  }
+
   render() {
     let mediaItems;
 
@@ -37,7 +42,7 @@ class MediaList extends Component {
       <div className="MediaList">
         <h1>Media List</h1>
         <p>Showing {this.state.pageSize} elements of {this.props.history.length}</p>
-        <a href="#!" onClick={this.loadMore.bind(this)}>Load more</a>
+        <a href="#!" className={this.loadMoreVisibilityClass()} onClick={this.loadMore.bind(this)}>Load more</a>
         <ul>
           {mediaItems}
         </ul>
