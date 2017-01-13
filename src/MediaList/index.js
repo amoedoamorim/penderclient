@@ -26,9 +26,9 @@ class MediaList extends Component {
     let mediaItems;
 
     if (this.props.history){
-      mediaItems = this.props.history.slice(0, this.state.pageSize).map(item => {
+      mediaItems = this.props.history.slice(0, this.state.pageSize).map((item, index) => {
         return (
-          <MediaItem media={item} />
+          <MediaItem key={index} media={item} />
         );
       });
     }
